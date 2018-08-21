@@ -1,9 +1,132 @@
-[{
-    "ProductID": 1,
-    "ProductName": "ProductA"
- },
- 
- {
-    "ProductID": 2,
-    "ProductName": "ProductB"
- }]
+[
+    {
+        "ID": 1,
+        "Name": "ProductA",
+        "Description": "Product A"
+    },
+    {
+        "ID": 2,
+        "Name": "ProductB",
+        "Description": "Product B"
+    },
+    {
+        "ID": 3,
+        "Name": "ProductC",
+        "Description": "Product C"
+    },
+    {
+        "ID": 4,
+        "Name": "ProductD",
+        "Description": "Product D"
+    },
+    {
+        "ID": 5,
+        "Name": "ProductE",
+        "Description": "Product E"
+    },
+    {
+        "ID": 6,
+        "Name": "ProductF",
+        "Description": "Product F"
+    },
+    {
+        "ID": 7,
+        "Name": "ProductG",
+        "Description": "Product G"
+    },
+    {
+        "ID": 8,
+        "Name": "ProductH",
+        "Description": "Product H"
+    },
+    {
+        "ID": 9,
+        "Name": "ProductI",
+        "Description": "Product I"
+    },
+    {
+        "ID": 10,
+        "Name": "ProductJ",
+        "Description": "Product J"
+    },
+    {
+        "ID": 11,
+        "Name": "ProductK",
+        "Description": "Product K"
+    },
+    {
+        "ID": 12,
+        "Name": "ProductL",
+        "Description": "Product L"
+    },
+    {
+        "ID": 13,
+        "Name": "ProductM",
+        "Description": "Product M"
+    },
+    {
+        "ID": 14,
+        "Name": "ProductN",
+        "Description": "Product N"
+    },
+    {
+        "ID": 15,
+        "Name": "ProductO",
+        "Description": "Product O"
+    },
+    {
+        "ID": 16,
+        "Name": "ProductP",
+        "Description": "Product P"
+    },
+    {
+        "ID": 17,
+        "Name": "ProductQ",
+        "Description": "Product Q"
+    },
+    {
+        "ID": 18,
+        "Name": "ProductR",
+        "Description": "Product R"
+    },
+    {
+        "ID": 19,
+        "Name": "ProductS",
+        "Description": "Product S"
+    },
+    {
+        "ID": 20,
+        "Name": "ProductT",
+        "Description": "Product T"
+    },
+    {
+        "ID": 21,
+        "Name": "ProductU",
+        "Description": "Product U"
+    },
+    {
+        "ID": 22,
+        "Name": "ProductV",
+        "Description": "Product V"
+    },
+    {
+        "ID": 23,
+        "Name": "ProductW",
+        "Description": "Product W"
+    },
+    {
+        "ID": 24,
+        "Name": "ProductX",
+        "Description": "Product X"
+    },
+    {
+        "ID": 25,
+        "Name": "ProductY",
+        "Description": "Product Y"
+    },
+    {
+        "ID": 26,
+        "Name": "ProductZ",
+        "Description": "Product Z"
+    }    
+]

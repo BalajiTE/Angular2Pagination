@@ -1,0 +1,63 @@
+<app-header></app-header>
+<div style="margin-bottom: 60px;"></div>
+
+<div class="row" style="margin-left: 5px;margin-right: 5px;">
+    <!-- Search Panel View -->
+    <div class="col-sm-2">
+        <ProductSearch></ProductSearch>
+    </div>
+    <!-- Main Results Data Grid-->
+    <div class="col-sm-7">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Product(s)
+                        <span class="pull-right">
+                            <button class="btn btn-default btn-xs btn-create" (click)="createNewProduct()">Create New</button>
+                        </span>
+                </h3>
+            </div>
+            <div class="panel-body fixed-panel">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                        <tr class="row">
+                            <th scope="col" class="col-sm-2"><em class="fa fa-cog"></em></th>
+                            <th scope="col" class="col-sm-1"><small>ID</small></th>
+                            <th scope="col" class="col-sm-4"><small>Name</small> </th>
+                            <th scope="col" class="col-sm-5"><small>Description</small> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let prd of pagedItems"  (click)="ShowDetails(prd)" class="row">
+                            <td class="col-sm-2">
+                                <a class="btn btn-default btn-xs" (click)="$event.stopPropagation();editProduct(prd)"><em class="fa fa-pencil"></em></a>
+                                <a class="btn btn-danger btn-xs" (click)="$event.stopPropagation();removeProduct(prd.ID)"><em class="fa fa-trash"></em></a>
+                            </td>
+                            <th scope="row" class="col-sm-1">
+                                <small>{{prd.ID}}</small>
+                            </th>
+                            <td class="col-sm-4">
+                                <small>{{prd.Name}}</small>
+                            </td>
+                            <td class="col-sm-5">
+                                <small>{{prd.Description}}</small>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pull-right">
+                <!-- pager -->
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                        <a (click)="setPage(page)">{{page}}</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <!-- Show Details View -->
+    <div class="col-sm-3">
+        <ProductDetails [product] = selectedProduct [isReadOnly] = formMode></ProductDetails>
+    </div>
+</div>

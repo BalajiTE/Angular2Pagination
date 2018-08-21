@@ -1,0 +1,102 @@
+<app-header></app-header>
+<div style="margin-bottom: 60px;"></div>
+ Test
+<div class="row" style="margin-left: 5px;margin-right: 5px;">
+    <div class="col-sm-3">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4 class="panel-title">Seatch Criteria</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-primary filterable">
+            <div class="panel-heading">
+                <h3 class="panel-title">Product(s)
+                        <span class="pull-right">
+                            <button class="btn btn-default btn-xs btn-create">Create New</button>
+                        </span>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                            <tr class="row">
+                                <th scope="col" class="col-sm-2"><em class="fa fa-cog"></em></th>
+                                <th scope="col" class="col-sm-1"><small>ID</small></th>
+                                <th scope="col" class="col-sm-4"><small>Name</small> </th>
+                                <th scope="col" class="col-sm-5"><small>Description</small> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let product of pagedItems" class="row">
+                                <td class="col-sm-2">
+                                    <a class="btn btn-default btn-xs" (click)="editProduct(product.ID)"><em class="fa fa-pencil"></em></a>
+                                    <a class="btn btn-danger btn-xs" (click)="removeProduct(product.ID)"><em class="fa fa-trash"></em></a>
+                                </td>
+                                <th scope="row" class="col-sm-1">
+                                    <small>{{product.ID}}</small>
+                                </th>
+                                <td class="col-sm-4">
+                                    <small>{{product.Name}}</small>
+                                </td>
+                                <td class="col-sm-5">
+                                    <small>{{product.Description}}</small>
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+            </div>
+            <div class="pull-right">
+                <!-- pager -->
+                <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                    <!-- <li [ngClass]="{disabled:pager.currentPage === 1}">
+                        <a (click)="setPage(1)">First</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === 1}">
+                        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                    </li> -->
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                        <a (click)="setPage(page)">{{page}}</a>
+                    </li>
+                    <!-- <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                        <a (click)="setPage(pager.totalPages)">Last</a>
+                    </li> -->
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h4 class="panel-title">Product Details for </h4>
+            </div>
+            <div class="panel-body">
+                <table class="table table-user-information">
+                    <tbody>
+                    <tr>
+                        <th class="col-sm-3"><small>ID</small></th>
+                        <td class="col-sm-9"></td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3"><small>Name</small></th>
+                        <td class="col-sm-9"></td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3"><small>Description</small></th>
+                        <td class="col-sm-9"></td>
+                    </tr>                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

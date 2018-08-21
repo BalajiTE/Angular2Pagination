@@ -1,0 +1,49 @@
+<div *ngIf="product" class="panel panel-info" [style.visibility]="product != null ? visible : hidden">
+    <div class="panel-heading">
+        <h4 class="panel-title">Product Details for <b>{{ product.Name }}</b> 
+            <button type="button" class="btn btn-xs btn-default pull-right" (click) = "CloseProductDetailsView()">X</button>
+        </h4>
+    </div>
+    <div class="panel-body">
+        <form #productForm="ngForm" (ngSubmit) ="saveProductDetails()">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <th class="col-sm-3">
+                            <label><small>ID</small></label>
+                        </th>
+                        <td class="col-sm-9">
+                            <input type="text" class="form-control" id="txtId" name="txtId" [readonly] = "isReadOnly" required [(ngModel)]="product.ID">                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3">
+                            <label><small>Name</small></label>
+                        </th>
+                        <td class="col-sm-9">
+                            <input type="text" class="form-control" id="txtName" name="txtName" [readonly] = "isReadOnly" required [(ngModel)]="product.Name">                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="col-sm-3">
+                            <label><small>Description</small></label>
+                        </th>
+                        <td class="col-sm-9">
+                            <input type="text" class="form-control" id="txtDescription" name="txtDescription" [readonly] = "isReadOnly" [(ngModel)]="product.Description">
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot *ngIf="!isReadOnly" [style.visibility]="isReadOnly ? hidden : visible">
+                    <tr class="row">
+                            <td colspan="2" class="row">
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-default" [disabled]="!productForm.form.valid" (click) = "resetProduct(this.productForm)">Reset</button>
+                                    <button type="submit" class="btn btn-success" [disabled]="!productForm.form.valid">{{isReadOnly ? "Save" : "Update"}}</button>
+                                </div>
+                            </td>
+                        </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
+</div>
